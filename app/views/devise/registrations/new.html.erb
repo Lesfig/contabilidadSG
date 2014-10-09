@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+    <div class="span5 offset4 well">
+    <legend align="center"><h3>Regístrese para acceder</h3></legend>
+   
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :nombre, "Nombre (*):" %> 
+  	<%= f.text_field :nombre, autofocus: true, autocomplete: "off", :style=>'width: 350px;' %></div>
+
+  <div><%= f.label :apellido, "Apellido (*):" %>
+  <%= f.text_field :apellido, autocomplete: "off",:style=>'width: 350px;' %></div>
+
+  <div><%= f.label :nacimiento, "Fecha de nacimiento (*):" %>
+  <%= f.date_select :nacimiento %></div>
+ 
+  <div><%= f.label :nacionalidad, "Nacionalidad (*):" %>
+  <%= f.text_field :nacionalidad, autocomplete: "off", :style=>'width: 350px;'%></div>
+
+  <div><%= f.label :telefono, "Telefono" %>
+  <%= f.text_field :telefono, autocomplete: "off", :style=>'width: 350px;'%></div>
+
+  <div><%= f.label :email, "Correo (*):" %>
+  <%= f.email_field :email, :style=>'width: 350px;' %></div>
+
+  <div><%= f.label :password, "Contraseña(*)" %>
+   <% if @validatable %><i>(<%= @minimum_password_length %> caracteres como minimo)</i><% end %>
+   <%= f.password_field :password, autocomplete: "off", :style=>'width: 350px;' %></div>
+
+  <div><%= f.label :password_confirmation, "Contraseña" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirmación de contraseña", :style=>'width: 350px;'%></div><br />
+
+  <div><%= f.submit "Guardar" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
+  </div>
+</div>

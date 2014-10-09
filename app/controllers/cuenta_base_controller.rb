@@ -1,0 +1,2 @@
+class CuentaBaseController < ApplicationController
+end

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cod_cuenta: 1
+  descripcion: MyString
+  nivel_cuenta: 1
+  asentable: MyString
+  tipo_saldo: MyString
+
+two:
+  cod_cuenta: 1
+  descripcion: MyString
+  nivel_cuenta: 1
+  asentable: MyString
+  tipo_saldo: MyString

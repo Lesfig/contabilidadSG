@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+    <div class="span5 offset4 well">
+    <legend align="center"><h3>Editar Cuenta </h3></legend>
+   
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <div><%= f.label :nombre, "Nombre (*):" %> 
+    <%= f.text_field :nombre, autofocus: true, autocomplete: "off", :style=>'width: 350px;' %></div>
+
+  <div><%= f.label :apellido, "Apellido (*):" %>
+  <%= f.text_field :apellido, autocomplete: "off",:style=>'width: 350px;' %></div>
+
+  <div><%= f.label :nacimiento, "Fecha de nacimiento (*):" %>
+  <%= f.date_select :nacimiento %></div>
+ 
+  <div><%= f.label :nacionalidad, "Nacionalidad (*):" %>
+  <%= f.text_field :nacionalidad, autocomplete: "off", :style=>'width: 350px;'%></div>
+
+  <div><%= f.label :telefono, "Telefono" %>
+  <%= f.text_field :telefono, autocomplete: "off", :style=>'width: 350px;'%></div>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %></div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div><%= f.label :password, "Contraseña(*):" %> <i>(Contraseña a cambiar)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %></div>
+
+  <div><%= f.label :password_confirmation, "Contraseña" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+  <div><%= f.label :current_password, "Contraseña Nueva(*)"%> <i>(Nueva contraseña)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %></div>
+
+  <div><%= f.submit "Update" %></div>
+<% end %>
+
+<h4 align="center"> Desea Eliminar Cuenta</h4>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>
+</div>
+  </div>
+</div>

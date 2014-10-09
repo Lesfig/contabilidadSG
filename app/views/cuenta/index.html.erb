@@ -1,0 +1,32 @@
+
+<div class= 'container'>
+<h1>Lista de Cuentas</h1>
+<table class= "table table-striped">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Descripción</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @cuenta.each do |cuentum| %>
+    <tr>
+      <td><%= cuentum.cod_cuenta %></td>
+      <td><%= cuentum.descripcion %></td>
+      <td> <button TYPE="button" class='btn btn-mini'>
+        <i class="icon-info-sign"><%= link_to 'Detalles', cuentum %> </i></button> 
+        <button TYPE="button" class='btn btn-mini'>
+        <i class="icon-edit"><%= link_to 'Editar', edit_cuentum_path(cuentum)%></i></button> 
+        <button TYPE="button" class='btn btn-mini btn-danger'>
+        <i class="icon-trash"><%= link_to 'Borrar', cuentum, method: :delete, data: { confirm: 'Are you sure?' }%></i></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+
+<%= link_to 'Nueva Cuenta', new_cuentum_path, :class => "btn btn-primary btn-lg" %>
+</div>
+

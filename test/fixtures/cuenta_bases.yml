@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nro_cuenta: 1
+  descripcion: MyString
+  nivel_cuenta: 1
+
+two:
+  nro_cuenta: 1
+  descripcion: MyString
+  nivel_cuenta: 1
